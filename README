@@ -1,0 +1,26 @@
+Project created via PlatformIO CLI via `pio project init --ide vim --board nodemcuv2`
+
+
+Board: ESP8266 NodeMCU CP2102 ESP-12E built by HiLetGo
+
+Platform: espressif8266
+nodemcuv2          ESP8266  80MHz        4MB      80KB   NodeMCU 1.0 (ESP-12E Module)
+
+Links:
+https://www.amazon.com/gp/product/B081CSJV2V/ref=ppx_yo_dt_b_search_asin_title?ie=UTF8&th=1
+http://www.hiletgo.com/ProductDetail/1997591.html
+https://docs.platformio.org/en/latest/platforms/espressif8266.html
+https://github.com/nodemcu/nodemcu-firmware/tree/dev-esp32
+https://github.com/nodemcu/nodemcu-devkit-v1.0
+https://nodemcu.readthedocs.io/en/dev-esp32/
+
+https://github.com/platformio/platform-espressif8266/tree/master/examples/arduino-blink?utm_source=platformio.org&utm_medium=docs
+https://github.com/platformio/platform-espressif8266/tree/master/examples/esp8266-rtos-sdk-blink?utm_source=platformio.org&utm_medium=docs
+
+Maybe good links?
+http://www.hiletgo.com/ProductDetail/2165564.html
+https://github.com/espressif?q=esp8266&type=&language=&sort=
+
+
+# Build what's in /src and upload to the ESP8266:
+platformio run --target upload
