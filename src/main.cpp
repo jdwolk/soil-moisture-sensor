@@ -1,25 +1,28 @@
-/*
- * Blink
- * Turns on an LED on for one second,
- * then off for one second, repeatedly.
- */
+#include <SPI.h>
+#include "Adafruit_seesaw.h"
 
-#include "Arduino.h"
+Adafruit_seesaw ss;
 
-void setup()
-{
-  // initialize LED digital pin as an output.
-  pinMode(LED_BUILTIN, OUTPUT);
+void setup() {
+  //Serial.begin(115200);
+  Serial.begin(9600);
+
+  Serial.println("seesaw Soil Sensor example!");
+
+  if (!ss.begin(0x36)) {
+    Serial.println("ERROR! seesaw not found");
+    while(1);
+  } else {
+    Serial.print("seesaw started! version: ");
+    Serial.println(ss.getVersion(), HEX);
+  }
 }
 
-void loop()
-{
-  // turn the LED on (HIGH is the voltage level)
-  digitalWrite(LED_BUILTIN, HIGH);
-  // wait for a second
-  delay(500);
-  // turn the LED off by making the voltage LOW
-   digitalWrite(LED_BUILTIN, LOW);
-  // wait for a second
+void loop() {
+  float tempC = ss.getTemp();
+  uint16_t capread = ss.touchRead(0);
+
+  Serial.print("Temperature: "); Serial.print(tempC); Serial.println("*C");
+  Serial.print("Capacitive: "); Serial.println(capread);
   delay(500);
 }
